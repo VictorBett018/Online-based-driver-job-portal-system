@@ -1,0 +1,27 @@
+{% load static %}
+
+
+
+{% block body %}
+{% include 'admin_navigation.html' %}
+
+<div style="background-color: skyblue; height: 250px; margin-top: 10px;">
+    <table class="table table-hover container">
+    
+        <thead>
+        <tr style="background-color: rgb(8, 16, 133);color: white;">
+            <th>Drivers</th>
+            <th>Employers</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{dcount}}</td>
+            <td>{{ecount}}</td>
+            </tr>
+    </tbody>
+    </table>
+</div>
+
+{% include 'footer.html' %}
+{% endblock %}

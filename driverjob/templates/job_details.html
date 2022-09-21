@@ -1,0 +1,33 @@
+{% load static %}
+{% block body %}
+{% include 'user_navigation.html' %}
+<link rel="stylesheet" href="{% static 'css/style.css'%}">
+<div style="background-color: skyblue; font-size: 18px; margin-top: 10px;">
+ <div style="color:rgb(1, 1, 102); font-size:30px; margin-left: 15px;"><u><h2>{{job.employer.company}}</h2></u></div>
+
+    <img src="{{job.image.url}}" width="175" height="160" id="hp"/>
+
+    Job Title:<b> {{job.title}}</b> <br>
+    Starting date for application: <b>{{job.start_date}}</b> <br>
+    Application will be closed on <span style="color: rgb(190, 16, 16);"><b>{{job.end_date}}</b></span> <br>
+    <a style="text-decoration: none; color:rgb(1, 1, 102);" href="#"><i class="fa fa-map-marker mr-2 "></i>{{job.location}}</a>
+    <a style="text-decoration: none; color:rgb(1, 1, 102);" href="#"><i class="fa fa-calendar mr-2 "></i>{{job.creationdate}}</a><br>
+    Estimated monthly salary: <b><i class="fa fa-money mr-2 "></i>Ksh {{job.salary}}</b> <br>
+    Minimum years of experience required:<b> {{job.experience}} Year(s)</b> <br>
+    
+    <span style="margin-left:15px ;color:rgb(1, 1, 102);"><b>Job Overview<br></b></span><span style="margin-left: 15px;"> {{job.description}}</span><br>
+    <a style="text-decoration: none; margin-left: 15px;" class="btn btn-success btn-sm" href="{% url 'apply_job' job.id %}" >Apply Now!</a>
+
+   
+    <div style="margin-left: 15px;">
+   <h4 style="color:rgb(1, 1, 102);">Need help?</h4>
+    If you have any concerns or need more clarification
+    on any of the information above,
+    feel free to consult with recruitor.<br>
+    
+        Full Name:<b><i> {{job.employer.user.first_name}} {{job.employer.user.last_name}}</i></b> <br>
+        Contact: <b><i>{{job.employer.mobile}}</i></b>
+    </div>
+</div>
+{% include 'footer.html' %}
+{% endblock %}

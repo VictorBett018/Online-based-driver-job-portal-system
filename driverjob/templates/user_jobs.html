@@ -1,0 +1,28 @@
+{% load static %}
+{% block body %}
+{% include 'user_navigation.html' %}
+<link rel="stylesheet" href="{% static 'css/style.css'%}">
+<div style="background-color: skyblue; margin-top: 10px;">
+    
+    {% for i in job %}
+<div style="margin-top: 10px; font-size: 15px; color: black;">
+    
+    <img src="{{i.image.url}}" alt="" width="130" height="130" id="hp"/>
+    Job Title:<b> {{i.title}}</b> <br>
+    Start Date: <b>{{i.start_date}}</b> <br>
+    Closing Date: <span style="color: rgb(190, 16, 16);"><b>{{i.end_date}}</b></span> <br>
+    Location:<b> {{i.location}}</b> <br>
+    Salary: <b>Ksh {{i.salary}}</b> <br>
+    
+    {% if i.id in li %}
+    <span class="btn btn-danger mr-2">Applied</span>
+    <hr>
+    {% else %}
+    <a style="text-decoration: none;" class="btn btn-success btn-sm" href="{% url 'job_details' i.id %}" >See more...</a>
+    <hr>
+    {% endif %}
+</div>
+{% endfor %}
+</div>
+{% include 'footer.html' %}
+{% endblock %}

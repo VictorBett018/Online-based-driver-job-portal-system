@@ -1,0 +1,21 @@
+{% load static %}
+{% block body %}
+{% include 'navigation.html' %}
+<link rel="stylesheet" href="{% static 'css/style.css'%}">
+<div style="background-color: skyblue; margin-top: 10px;">
+    
+    {% for i in data %}
+<div style="margin-top: 10px; font-size: 15px; color: black;">
+    
+    <img src="{{i.image.url}}" alt="" width="130" height="130" id="hp"/>
+    Job Title:<b> {{i.title}}</b> <br>
+    Location:<b> {{i.location}}</b> <br>
+    Salary:<b> {{i.salary}}</b> <br>
+    
+    <a style="text-decoration: none; margin-top: 30px;" class="btn btn-success btn-sm" href="{% url 'user_login'%}" >Login to view and apply</a>
+    <hr>
+</div>
+{% endfor %}
+</div>
+{% include 'footer.html' %}
+{% endblock %}

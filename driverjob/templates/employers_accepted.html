@@ -1,0 +1,48 @@
+{% load static %}
+
+
+
+{% block body %}
+{% include 'emp_nav.html' %}
+
+<div style="background-color: skyblue; margin-top: 10px;">
+    
+
+<table id="example" class="table table-hover container">
+    
+    <thead>
+    <tr style="background-color: rgb(8, 16, 133);color: white;">
+        <th>S.No.</th>
+        <th>Full Name</th>
+        <th>Email</th>
+        <th>Phone No</th>
+        <th>Gender</th>
+        <th>Company</th>
+        <th>Status</th>
+        <th>Image</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    
+    <tbody>
+    {% for i in data %}
+        <tr>
+            <td>{{forloop.counter}}</td>
+            <td>{{i.user.first_name}} {{i.user.last_name}}</td>
+            <td>{{i.user.username}}</td>
+            <td>{{i.mobile}}</td>
+            <td>{{i.gender}}</td>
+            <td>{{i.company}}</td>
+            <td>{{i.status}}</td>
+            <td><img src="{{i.image.url}}" style="width:100px ; height:100px ; border-radius:50%;"></td>
+            <td><a style="text-decoration: none;" class="btn btn-success btn-sm" href="{% url 'change_status' i.id %}" >Change Status</a></td>
+        </tr>
+    </tbody>
+    {% endfor %}
+</table>
+
+
+</div>
+
+{% include 'footer.html' %}
+{% endblock %}

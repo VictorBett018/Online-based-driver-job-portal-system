@@ -1,0 +1,16 @@
+{% load static %}
+{% block body %}
+{% include 'employer_navigation.html' %}
+<link rel="stylesheet" href="{% static 'css/style.css'%}">
+<div style="background-color: skyblue; margin-top: 10px; height: 250px;">
+    
+    <img src="{{employer.image.url}}" style="border-radius: 50%;" width="150" height="150" id="hp"/>
+    Full Name:<b> {{employer.user.first_name}} {{employer.user.last_name}}</b> <br>
+    Email: <b>{{employer.user.username}}</b> <br>
+    Phone Number:<b> {{employer.mobile}}</b><br>
+    Gender:<b> {{employer.gender}}</b><br>
+    Company/Institution Name:<b> {{employer.company}}</b><br>
+    
+</div>
+{% include 'footer.html' %}
+{% endblock %}

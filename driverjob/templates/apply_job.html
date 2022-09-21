@@ -1,0 +1,40 @@
+{% load static %}
+{% block body %}
+{% include 'user_navigation.html' %}
+<link rel="stylesheet" href="{% static 'css/style.css'%}">
+<div style="background-color: skyblue; font-size: 18px; margin-top: 10px;">
+ 
+    <form style="width: 23vw;text-align: center; margin-left : 25vw;"  method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+    <div class="form-outline mb-4">
+      <h4 style="color: rgb(1, 1, 102);"> <label >Upload your resume</label></h4>
+        <input type="file" name="resume" id="form2Example18" class="form-control form-control-lg" required />
+      </div>
+      <div  class="pt-1 mb-4">
+        <button  style="margin-bottom:10px ;" class="btn btn-info btn-lg btn-block" name="submit" type="submit">Submit</button>
+      </div>
+    </form>
+<p></p>
+</div>
+{% include 'footer.html' %}
+
+{% if error == "close" %}
+<script>
+  alert("Application period has expired!");
+  window.location.href="{% url 'user_jobs' %}"
+</script>
+{% endif %}
+
+{% if error == "notopen" %}
+<script>
+  alert("Application period has not started.");
+  window.location.href="{% url 'user_jobs' %}"
+</script>
+{% endif %}
+{% if error == "done" %}
+<script>
+  alert("Application submitted successfully!");
+  window.location.href="{% url 'user_jobs' %}"
+</script>
+{% endif %}
+{% endblock %}

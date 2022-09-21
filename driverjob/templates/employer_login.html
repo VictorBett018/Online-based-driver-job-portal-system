@@ -1,0 +1,53 @@
+{% load static %}
+
+{% block body %}
+
+{% include 'navigation.html' %}
+
+<div style="background-color: skyblue; margin-top: 10px;">
+    <form style="width: 23vw;text-align: center; margin-left : 25vw;" method="post">
+        {% csrf_token %}
+  
+        <h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px; text-align: center; color: black;">Employer Login</h3>
+
+        <div class="form-outline mb-4">
+          <input type="email" name="uname" id="form2Example18" class="form-control form-control-lg" />
+          <label class="form-label" for="form2Example18">Email address</label>
+        </div>
+
+        <div class="form-outline mb-4">
+          <input type="password" name="pwd" id="form2Example28" class="form-control form-control-lg" />
+          <label class="form-label" for="form2Example28">Password</label>
+        </div>
+
+        <div class="pt-1 mb-4">
+          <button class="btn btn-info btn-lg btn-block" type="submit">Login</button>
+        </div>
+        <p style="color: black;">Don't have an account? <a style="text-decoration: none;" href="{% url 'employer_register' %}">Register</a></p>
+
+        <p class="small mb-5 pb-lg-2"><a style="text-decoration: none;" class="text-muted" href="#!">Forgot password?</a></p>
+
+      </form>
+
+</div>
+
+{% include 'footer.html' %}
+{% if error == "no" %}
+<script>
+  alert("Login successful");
+  window.location.href="{% url 'employer_home' %}"
+</script>
+{% endif %}
+
+{% if error == "yes" %}
+<script>
+  alert("Incorrect email or password.Try again.");
+</script>
+{% endif %}
+{% if error == "not" %}
+<script>
+  alert("Registration status is still pending");
+</script>
+{% endif %}
+
+{% endblock %}
