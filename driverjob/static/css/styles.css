@@ -1,14 +1,14 @@
 
 
 p {
-color: #999;
+color: #000;
 font-size: 20px;
 font-weight: 300;
 line-height: 30px;
 }
 
 hr {
-border-bottom-color: #999;
+border-bottom-color: rgb(53, 52, 52);
 width: 100px;
 }
 

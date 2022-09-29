@@ -2,26 +2,43 @@
 {% block body %}
 {% include 'user_navigation.html' %}
 <link rel="stylesheet" href="{% static 'css/style.css'%}">
-<div style="background-color: skyblue; margin-top: 10px;">
-    
-    {% for i in job %}
-<div style="margin-top: 10px; font-size: 15px; color: black;">
-    
-    <img src="{{i.image.url}}" alt="" width="130" height="130" id="hp"/>
-    Job Title:<b> {{i.title}}</b> <br>
-    Start Date: <b>{{i.start_date}}</b> <br>
-    Closing Date: <span style="color: rgb(190, 16, 16);"><b>{{i.end_date}}</b></span> <br>
-    Location:<b> {{i.location}}</b> <br>
-    Salary: <b>Ksh {{i.salary}}</b> <br>
-    
-    {% if i.id in li %}
-    <span class="btn btn-danger mr-2">Applied</span>
-    <hr>
-    {% else %}
-    <a style="text-decoration: none;" class="btn btn-success btn-sm" href="{% url 'job_details' i.id %}" >See more...</a>
-    <hr>
-    {% endif %}
+<div style="background-color: skyblue; margin-top: 10px; margin-bottom: 10px;">
+{% for i in job %}
+<section class="wrapper bg-light-pink" id="features-grid">
+   <div class="features-grid-container">
+  
+     <div class="d-flex-r features-grid-row" id="row">
+
+        <div class="features-grid-row-img ">
+            <img style="border-radius:5px ;" src="{{i.image.url}}" id="hp" alt="" height="180" width="200" />
+        </div>
+        <hr>
+        <div class="features-grid-row-text" >
+                <div>
+                    <p style="color: black; text-align: center;">
+                        <h2 style="color:rgb(25, 0, 117) ;" class=" font-x2">
+                        {{i.title}}
+                        </h2>
+                        Start Date: <b>{{i.start_date}}</b> <br>
+                        Closing Date: <span style="color: rgb(190, 16, 16);"><b>{{i.end_date}}</b></span> <br>
+                        Location:<b> {{i.location}}</b> <br>
+                        Salary: <b>Ksh {{i.salary}}</b> <br>
+                   
+                        {% if i.id in li %}
+                        <span style="border-radius: 10px;" class="btn btn-success mr-2">Applied</span>
+                        
+                        {% else %}
+                        <a style="text-decoration: none; border-radius: 10px; background-color: coral;" class="btn btn-success btn-sm" href="{% url 'job_details' i.id %}" >See more...</a>
+                       
+                        {% endif %}
+                    </p>
+                    
+             </div>
+        </div>
+    </div>
 </div>
+</section>
+
 {% endfor %}
 </div>
 {% include 'footer.html' %}
