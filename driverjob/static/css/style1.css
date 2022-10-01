@@ -1,0 +1,131 @@
+*/
+
+#about {
+  margin-top: 20px;
+  padding: 100px 0px 0px 0px;
+  position: relative;
+  z-index: 9;
+}
+
+#about .section-heading h2 {
+  padding-right: 120px;
+}
+
+#about img {
+  width: 100%;
+  overflow: hidden;
+}
+
+#about .left-text-content p {
+  margin-bottom: 25px;
+}
+
+#about .right-content {
+  margin-left: 30px;
+  text-align: center;
+}
+
+#about .right-content .thumb {
+  position: relative;
+}
+
+#about .right-content .thumb a {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 70px;
+  height: 70px;
+  display: inline-block;
+  line-height: 70px;
+  text-align: center;
+  background-color: #fb5849;
+  color: #fff;
+  border-radius: 50%;
+  transform: translate(-35px, -35px);
+  transition: all .3s;
+}
+
+#about .right-content .thumb a:hover {
+  opacity: .9;
+}
+
+
+/*
+#chefs {
+  padding-top: 10px;
+}
+
+#chefs .section-heading {
+  margin-bottom: 10px;
+}
+
+#chefs .section-heading h6 {
+  padding-left: 0px;
+}
+
+#chefs .section-heading h6:before {
+  display: none;
+}
+
+#chefs .chef-item {
+  text-align: center;
+  border: 1px solid #afafaf;
+  padding: 5px;
+  transition: all .5s;
+  border-radius: 3px;
+}
+
+#chefs .chef-item:hover {
+  border-color: #fb5849;
+}
+
+#chefs .chef-item:hover .down-content h4 {
+  color: #fb5849;
+}
+
+#chefs .chef-item .thumb {
+  position: relative;
+}
+
+#chefs .chef-item .thumb img {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+#chefs .chef-item .thumb .overlay {
+  position: absolute;
+  background-color: #2a2a2a;
+  border-radius: 3px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  opacity: 0;
+  visibility: hidden;
+  transition: all .3s;
+}
+
+#chefs .chef-item .thumb ul.social-icons li {
+  display: inline-block;
+  margin: 0px 5px;
+}
+
+
+
+#chefs .chef-item .down-content {
+  padding: 20px 0px;
+}
+
+#chefs .chef-item .down-content h4 {
+  transition: all .3s;
+  font-size: 20px;
+  font-weight: 700;
+  color: #2a2a2a;
+}
+
+#chefs .chef-item .down-content span {
+  font-size: 14px;
+  color: #2a2a2a;
+}

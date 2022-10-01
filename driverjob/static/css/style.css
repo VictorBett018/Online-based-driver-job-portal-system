@@ -1,3 +1,4 @@
+
 ul {
     list-style-type: none;
     margin: 0;
@@ -23,18 +24,7 @@ ul {
     background-color: rgb(243, 188, 7);
   }
  
-  .column {
-    float: left;
-    width: 50%;
-    padding: 10px;
-  }
-  
-  /* Clear floats after the columns */
-  .row:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
+ 
 
   /* Navbar container */
 .navbar {
@@ -52,11 +42,4 @@ ul {
   padding: 14px 16px;
   text-decoration: none;
 }
-
-#hp  {
-  float: left;    
-  padding: auto;
-   margin:0 15px 0 15px;
-   border:0.5px solid black;
-  }
 

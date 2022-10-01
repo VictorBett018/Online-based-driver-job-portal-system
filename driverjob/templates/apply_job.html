@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="{% static 'css/style.css'%}">
 <div style="background-color: skyblue; font-size: 18px; margin-top: 10px;">
  
-    <form style="width: 23vw;text-align: center; margin-left : 25vw;"  method="post" enctype="multipart/form-data">
+    <form style="width: 23vw;text-align: center; margin-left : 35vw;"  method="post" enctype="multipart/form-data">
         {% csrf_token %}
     <div class="form-outline mb-4">
       <h4 style="color: rgb(1, 1, 102);"> <label >Upload your resume</label></h4>
@@ -20,14 +20,14 @@
 
 {% if error == "close" %}
 <script>
-  alert("Application period has expired!");
+  alert("Application period has expired! View other jobs.");
   window.location.href="{% url 'user_jobs' %}"
 </script>
 {% endif %}
 
 {% if error == "notopen" %}
 <script>
-  alert("Application period has not started.");
+  alert("Application period has not started. View other jobs.");
   window.location.href="{% url 'user_jobs' %}"
 </script>
 {% endif %}
