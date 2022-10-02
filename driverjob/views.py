@@ -157,10 +157,13 @@ def user_register(request):
       p = request.POST['pwd']
       e = request.POST['email']
       con = request.POST['contact']
+      yol = request.POST['yearsoflicense']
+      yoe = request.POST['yearsofexperience']
+      loc = request.POST['location']
       gen = request.POST['gender']
       try:
         user = User.objects.create_user(first_name=f,last_name=l,username=e,password=p)
-        DriverUser.objects.create(user=user,mobile=con,image=i,gender=gen, type="driver")
+        DriverUser.objects.create(user=user,mobile=con,image=i,gender=gen,yearsoflicense=yol,yearsofexperience = yoe,location= loc, type="driver")
         error= "no"
 
       except:

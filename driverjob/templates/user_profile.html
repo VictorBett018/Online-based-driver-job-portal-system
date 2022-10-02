@@ -2,14 +2,72 @@
 {% block body %}
 {% include 'user_navigation.html' %}
 <link rel="stylesheet" href="{% static 'css/style.css'%}">
-<div style="background-color: skyblue; margin-top: 10px; height: 250px;">
-    <div style="color:rgb(1, 1, 102); font-size:20px; margin-left: 30px;"><h4>Profile</h4></div>
+<link rel="stylesheet" href="{% static 'css/style2.css'%}">
+<div style="background-color: skyblue; margin-top: 10px;">
 
-    <img src="{{driver.image.url}}" style="border-radius: 50%;" width="150" height="150" id="hp"/>
-    Full Name:<b> {{driver.user.first_name}} {{driver.user.last_name}}</b> <br>
-    Email: <b>{{driver.user.username}}</b> <br>
-    Phone Number:<b> {{driver.mobile}}</b><br>
-    Gender:<b> {{driver.gender}}</b><br>
+
+    <section class="section" id="chefs">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 offset-lg-4 text-center">
+                    <div class="section-heading">
+                        <h6>Profie</h6>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="chef-item">
+                        <div class="thumb">
+                            <img src="{{driver.image.url}}" />
+ 
+                        </div>
+                        <div class="down-content">
+                           
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    Name <br>
+                                 <button style="border-radius:10px ;"> {{driver.user.first_name}} {{driver.user.last_name}}</button>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    Email <br>
+                                  <button style="border-radius:10px ;"> {{driver.user.username}}</button>
+                                </div>
+                              </div>
+
+                              <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    Contact no <br>
+                                 <button style="border-radius:10px ;"> {{driver.mobile}}</button>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    Location <br>
+                                  <button style="border-radius:10px ;"> {{driver.location}}</button>
+                                </div>
+                              </div>
+                              <div class="form-row">
+                                <div class="form-group col-md-6">
+                                   Year(s) of License <br>
+                                 <button style="border-radius:10px ;"> {{driver.yearsoflicense}}</button>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    Year(s) of Experience <br>
+                                  <button style="border-radius:10px ;"> {{driver.yearsofexperience}}</button>
+                                </div>
+                              </div>
+                              <div class="form-group col-md-6">
+                                Gender <br>
+                                <button style="border-radius:10px ;"> {{driver.gender}}</button>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+
+        </div>
+    </section>
     
     
 </div>

@@ -8,6 +8,9 @@ from django.contrib.auth.models import User
 class DriverUser(models.Model):
     user=models.ForeignKey(User,on_delete=models.CASCADE)
     mobile = models.CharField(max_length=15, null= True)
+    yearsoflicense = models.CharField(max_length=15, null= True)
+    yearsofexperience = models.CharField(max_length=15, null= True)
+    location = models.CharField(max_length=100, null= True)
     image = models.FileField(null=True)
     gender =models.CharField(max_length=10, null=True)
     type =models.CharField(max_length=15, null=True)
@@ -18,6 +21,7 @@ class Employer(models.Model):
     user=models.ForeignKey(User,on_delete=models.CASCADE)
     mobile = models.CharField(max_length=15, null= True)
     image = models.FileField(null=True)
+    cartype = models.CharField(max_length=30, null=True)
     gender =models.CharField(max_length=10, null=True)
     company =models.CharField(max_length=100, null=True)
     type =models.CharField(max_length=15, null=True)
