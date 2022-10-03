@@ -419,3 +419,10 @@ def applicants(request):
     data = Apply.objects.all()
     d = {'data':data}
     return render(request, 'applicants.html',d)
+
+def drivers(request):
+    if not request.user.is_authenticated:
+        return redirect('employer_login')
+    data = DriverUser.objects.all()
+    d = {'data':data}   
+    return render(request, 'drivers.html',d)  

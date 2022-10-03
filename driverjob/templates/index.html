@@ -3,6 +3,7 @@
 {% block body %}
 {% include 'index_nav.html' %}
 
+
 <div style="background-color: skyblue; margin-top: 10px;">
     <section id="home" class="main">
         <div class="overlay"></div>
@@ -10,26 +11,33 @@
            <div class="row">
    
                   <div class="wow fadeInUp col-md-6 col-sm-5 col-xs-10 col-xs-offset-1 col-sm-offset-0" data-wow-delay="0.2s">
-                       <img src="{% static 'images/home.png' %}" width="250" height="200" class="img-responsive" alt="Home">
+                    <img src="https://images.unsplash.com/photo-1616432043562-3671ea2e5242?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dHJ1Y2t8ZW58MHx8MHx8&w=1000&q=80" width="500" height="500" class="img-responsive" alt="Home">
                   </div>
    
                   <div class="col-md-6 col-sm-7 col-xs-12">
                        <div class="home-thumb">
-                            <h1 style="color: black; font-size: 30px; text-align: center;" class="wow fadeInUp" >Need a Job? </h1>
+                            <h1 style="color: rgb(196, 79, 12); font-size: 30px; text-align: center;" class="wow fadeInUp" >Need a Job? </h1>
                             <p style="color: black; font-size: large;" class="wow fadeInUp">Are you looking for a driving job? Your search is over. Get all driving jobs categories such as truck driving, school bus driving, personal driving jobs.</p>
                        </div>
                        <div class="home-thumb">
-                         <h1 style="color: black; font-size: 30px; text-align: center;" class="wow fadeInUp" >All driver categories</h1>
-                         <p style="color: black; font-size: large;" class="wow fadeInUp">Get yourself a competent driver instantly. Post your job vacancy and get a driver in no time.</p>
+                         <h1 style="color: rgb(196, 79, 12); font-size: 30px; text-align: center;" class="wow fadeInUp" >All driver categories</h1>
+                         <p style="color: black; font-size: large;" class="wow fadeInUp">Are you a private vehicle owner or enterprise seeking to engage the services of a professional driver in 24hours? You are in the right place. Hire the right set of reliable and professional drivers ONDEMAND .Get yourself a competent driver instantly. Post your job vacancy and get a driver in no time.</p>
+                    </div>
+                    <div class="home-thumb">
+                         <h1 style="color: rgb(196, 79, 12); font-size: 30px; text-align: center;" class="wow fadeInUp" >We care about your proffesions</h1>
+                         <p style="color: black; font-size: large;" class="wow fadeInUp">
+                              
+                              DriverHub takes care of your career and ensures that you climb up the social and economic ladder. Without drivers, the world will be at standstill. Nothing will move.</p>
                     </div>
                   </div>
-   
-
-                  
            </div>
        </div>
    </section>
 </div>
+<div style="height:430px ; background-color: hsl(0, 0%, 0%);">
+     {% include 'testimonials.html' %}
+    
+</div>
+ {% include 'footer.html' %}
 
-{% include 'footer.html' %}
 {% endblock %}

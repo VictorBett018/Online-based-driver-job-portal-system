@@ -31,6 +31,7 @@ urlpatterns = [
     path('user_home', user_home, name="user_home"),
     path('user_jobs', user_jobs, name="user_jobs"),
     path('view_users', view_users, name="view_users"),
+    path('drivers', drivers, name="drivers"),
     path('user_profile', user_profile, name="user_profile"),
     path('del_user/<int:pid>', del_user, name="del_user"),
     path('employer_home', employer_home, name="employer_home"),

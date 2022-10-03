@@ -3,47 +3,28 @@
 {% include 'employer_navigation.html' %}
 <link rel="stylesheet" href="{% static 'css/style.css'%}">
 
-<link rel="stylesheet" href="{% static 'css/style1.css'%}">
+<link rel="stylesheet" href="{% static 'css/style2.css'%}">
+<link rel="stylesheet" href="{% static 'css/style3.css'%}">
 
-<div style="background-color: skyblue; margin-top: 10px;">
+<div style="background-color: skyblue; height: 450px; margin-top: 10px;">
 
+    {% for i in job %}
 
+    <div style="float:left;margin-right: 5px; ">
+        <figure class="snip1390"><img src="{{i.image.url}}" height="100" width="100" alt="profile-sample6" class="profile" />
+        <figcaption>
+          <h2>{{i.title}}</h2>
+          
+          <p> Job Title: {{i.title}} <br>
+            Location: {{i.location}} <br>
+            Date Created: {{i.creationdate}}<br>
+            <a style="text-decoration: none;" class="btn btn-success btn-sm" href="{% url 'edit_job' i.id %}" >Edit</a>
+            <a style="text-decoration: none;" class="btn btn-danger btn-sm" href="{% url 'del_job' i.id %}" >Del</a></p>
+        </figcaption>
+      </figure>
+     </div>
 
-    <section class="section" id="chefs">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 offset-lg-4 text-center">
-                    <div class="section-heading">
-                        <h6>Jobs</h6>
-                        <h2>View jobs</h2>
-                    </div>
-                </div>
-            </div>
-            {% for i in job %}
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="chef-item">
-                        <div class="thumb">
-                           
-                            <img src="{{i.image.url}}" alt="" />
-                        </div>
-                        <div class="down-content">
-                            Job Title: {{i.title}} <br>
-                            Location: {{i.location}} <br>
-                            Date Created: {{i.creationdate}}<br>
-                            <a style="text-decoration: none;" class="btn btn-success btn-sm" href="{% url 'edit_job' i.id %}" >Edit</a>
-                            <a style="text-decoration: none;" class="btn btn-danger btn-sm" href="{% url 'del_job' i.id %}" >Del</a>
-                
-                        </div>
-                    </div>
-                </div>
-                
-            </div>
-            {% endfor %}
-        </div>
-    </section>
-
-
+     {% endfor %}
 
 </div>
 {% include 'footer.html' %}

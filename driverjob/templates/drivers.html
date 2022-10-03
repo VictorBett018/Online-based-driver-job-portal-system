@@ -1,0 +1,29 @@
+{% load static %}
+{% block body %}
+{% include 'employer_navigation.html' %}
+<link rel="stylesheet" href="{% static 'css/style.css'%}">
+<link rel="stylesheet" href="{% static 'css/style3.css'%}">
+
+<div style="background-color: skyblue;height: 1000px; margin-top: 10px;">
+    {% for i in data %}
+    <div style="float:left;margin-left: 10px; margin-right: 10px; ">
+        <figure class="snip1390"><img src="{{i.image.url}}" height="100" width="100" alt="profile-sample6" class="profile" />
+       <figcaption>
+         <h2>{{i.user.first_name}} {{i.user.last_name}}</h2>
+         <h4>{{i.user.username}}</h4>
+         <p>
+        Contact no:    {{i.mobile}} <br>
+        <i class="fa-solid fa-location-dot"></i> Location:   {{i.location}} <br>
+          Gender:  {{i.gender}} <br>
+          Year(s) of license:  {{i.yearsoflicense}} <br>
+          Year(s) of experience:  {{i.yearsofexperience}}
+            
+         </p>
+       </figcaption>
+     </figure>
+    </div>
+ 
+{% endfor %}
+</div>
+{% include 'footer.html' %}
+{% endblock %}

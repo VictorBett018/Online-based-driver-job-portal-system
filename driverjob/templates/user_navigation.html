@@ -25,8 +25,7 @@
                     <span style="color: #eb781b; text-align: center;">Driver Hire Portal</span>
                 </span>
         <ul>
-            <li><a style="text-decoration: none;" href="{% url 'user_home' %}">Home</a></li>
-            <li><a style="text-decoration: none;" href="{% url 'user_jobs' %}">Jobs</a></li>
+            <li><a style="text-decoration: none;" href="{% url 'user_jobs' %}">Home</a></li>
             <li><a style="text-decoration: none;"  href="{% url 'index' %}">Contact</a></li>
            <li><a style="text-decoration: none;"  href="{% url 'index' %}">About Us</a></li>
            <li style="float:right;"><i><a href="{% url 'user_profile' %}" style=" color:#eb781b; margin-right: 5px; text-decoration: none;">{{request.user.first_name}} {{request.user.last_name}}</a></i></li>
