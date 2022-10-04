@@ -16,21 +16,16 @@
       </head>
     </head>
     <body>
-     
-           
-                    <img src="{% static 'images/logo.png' %}" width="180px" height="90px">
-        
-            
-                    <span style="font-weight: bold; font-size: 30px;">
-                    <span style="color: #eb781b; text-align: center;">Driver Hire Portal</span>
+      
+       <span style="font-weight: bold; font-size: 30px;">
+   <span style="color: #eb781b; text-align: center;">Driver Hub Portal</span>
                 </span>
         <ul>
             <li><a style="text-decoration: none;" href="{% url 'employer_home' %}">Home</a></li>
+            <li><a style="text-decoration: none;"  href="{% url 'drivers' %}">Drivers</a></li>
             <li><a style="text-decoration: none;" href="{% url 'post_job' %}">Add Driver Job</a></li>
             <li><a style="text-decoration: none;" href="{% url 'job_list' %}">Jobs Added</a></li>
             <li><a style="text-decoration: none;" href="{% url 'applicants' %}">Applicants</a></li>
-            <li><a style="text-decoration: none;"  href="{% url 'drivers' %}">Drivers</a></li>
-           <li><a style="text-decoration: none;"  href="{% url 'index' %}">About Us</a></li>
            <li style="float:right;"><i><a href="{% url 'employer_profile' %}" style=" color:#eb781b; margin-right: 5px; text-decoration: none;">{{request.user.first_name}} {{request.user.last_name}}</a></i></li>
            <li style="float:right;"><a style="text-decoration: none;" href="{% url 'Logout' %}"> Logout</a></li>
            <li style="float:right;"><a style="text-decoration: none;" href="{% url 'change_emppwd' %}"> Change Password</a></li>

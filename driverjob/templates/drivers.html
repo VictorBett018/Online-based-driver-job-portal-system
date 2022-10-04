@@ -6,7 +6,7 @@
 
 <div style="background-color: skyblue;height: 1000px; margin-top: 10px;">
     {% for i in data %}
-    <div style="float:left;margin-left: 10px; margin-right: 10px; ">
+    <div style="float:left;margin-left: 35px; margin-right: 10px; ">
         <figure class="snip1390"><img src="{{i.image.url}}" height="100" width="100" alt="profile-sample6" class="profile" />
        <figcaption>
          <h2>{{i.user.first_name}} {{i.user.last_name}}</h2>
@@ -17,8 +17,9 @@
           Gender:  {{i.gender}} <br>
           Year(s) of license:  {{i.yearsoflicense}} <br>
           Year(s) of experience:  {{i.yearsofexperience}}
-            
          </p>
+         <button ><a style="text-decoration: none;" href="tel:{{i.mobile}}">call now </a></button>
+
        </figcaption>
      </figure>
     </div>

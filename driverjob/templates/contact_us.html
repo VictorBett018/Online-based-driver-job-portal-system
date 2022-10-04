@@ -1,0 +1,53 @@
+{% load static %}
+
+{% block body %}
+{% include 'index_nav.html' %}
+
+
+<div style="background-color: skyblue; margin-top: 10px;">
+   
+   
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto+Slab&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="contact.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    </head>
+
+        <div class="container">
+            
+            <div class="content">
+                <div class="content-form">
+                    <section>
+                        <i class="fa fa-map-marker fa-2x" aria-hidden="true"></i>
+                        <p style="color: black;">
+                            DriverHub LTD, WBC<br>
+                            7 Floor, Chiromo Lane<br>
+                            Westlands, Nairobi.
+                        </p>
+                    </section>
+    
+                    <section>
+                        <i class="fa fa-phone fa-2x" aria-hidden="true"></i>
+                        <p style="color: black;">+254 712 444 555</p>
+                        <p style="color: black;">+254 784 000 555</p>
+
+                    </section>
+    
+                    <section>
+                        <i class="fa fa-envelope fa-2x" aria-hidden="true"></i>
+                
+                        <p style="color: black;">driverhub@info.org</p>
+                    </section>
+                </div>
+            </div>
+    
+         <div class="image1">
+            <img src="https://images.pexels.com/photos/638479/pexels-photo-638479.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" height="500" width="500" alt="">
+        </div>
+        </div>     
+
+</div>
+
+ {% include 'footer.html' %}
+
+{% endblock %}

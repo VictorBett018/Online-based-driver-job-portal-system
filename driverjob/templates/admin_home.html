@@ -5,19 +5,19 @@
 {% block body %}
 {% include 'admin_navigation.html' %}
 
-<div style="background-color: skyblue; height: 250px; margin-top: 10px;">
+<div style="background-color: skyblue; margin-top: 10px;">
     <table class="table table-hover container">
     
         <thead>
-        <tr style="background-color: rgb(8, 16, 133);color: white;">
+        <tr style="color: rgb(4, 4, 116);">
             <th>Drivers</th>
             <th>Employers</th>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <td>{{dcount}}</td>
-            <td>{{ecount}}</td>
+            <td> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQo_jE8ktkZkOeMtgKd3iWcYL9SQmippYYW1Q&usqp=CAU" height="240" width="240" alt=""> <br><b>Drivers registered <br> {{dcount}}</b></td>
+            <td><img src="https://cdns.iconmonstr.com/wp-content/releases/preview/2012/240/iconmonstr-user-14.png" alt=""> <br><b>Employers registered <br>  {{ecount}} </b></td>
             </tr>
     </tbody>
     </table>

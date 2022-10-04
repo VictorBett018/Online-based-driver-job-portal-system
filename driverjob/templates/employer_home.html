@@ -2,22 +2,98 @@
 {% block body %}
 {% include 'employer_navigation.html' %}
 <link rel="stylesheet" href="{% static 'css/style.css'%}">
+<link rel="stylesheet" href="{% static 'css/style4.css'%}">
+
 <div style="background-color: skyblue; margin-top: 10px;">
     
-    {% for i in job %}
-<div style="margin-top: 10px; font-size: 15px; margin-left: 25px; color: black;">
+    <body>
+        <main>
+          <div class="big-wrapper light">
+      
+            <div class="showcase-area">
+              <div class="container">
+                <div class="left">
+                  <div style="color: rgb(241, 133, 10);" class="big-title">
+                    <h1>Without Drivers,</h1>
+                    <h1>The World will not move</h1>
+                  </div>
+                  <p style="color: black;" class="text">
+                    Engage the services of a professional driver within 24 hours. Hire the right set of reliable and professional drivers ONDEMAND .Get yourself a competent driver instantly. Post your job vacancy and get a driver in no time.
+                  </p>
+                  <div class="cta">
+                    <a href="{% url 'post_job' %}" style="background-color: rgb(241, 133, 10);" class="btn">Post Job</a>
+                    <a href="{% url 'drivers' %}" style="background-color: rgb(241, 133, 10);" class="btn">View Drivers</a>
 
-    <h1><b> {{i.title}}</b></h1> <br>
-    <img src="{{i.image.url}}" alt="" width="180" height="180" id="hp"/>
-    <br>
-    Start Date: <b>{{i.start_date}}</b> <br>
-    Closing Date:<span style="color: red;"><b>{{i.end_date}}</b></span> <br>
-    Location:<b> {{i.location}}</b> <br>
-    Date Created:<b> {{i.creationdate}}</b><br>
-    <b>Job Description</b><i><br> {{i.description}}</i> 
-    <hr>
-</div>
-{% endfor %}
+                  </div>
+                </div>
+    
+                <div class="right">
+                  <img src="https://images.pexels.com/photos/3787149/pexels-photo-3787149.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Person Image" class="person" />
+                </div>
+              </div>
+            </div>
+    
+          </div>
+        </main>
+    
+        <!-- JavaScript Files -->
+    
+<script src="https://kit.fontawesome.com/a81368914c.js"></script>
+<script>
+            // Select The Elements
+var toggle_btn;
+var big_wrapper;
+var hamburger_menu;
+
+function declare() {
+  toggle_btn = document.querySelector(".toggle-btn");
+  big_wrapper = document.querySelector(".big-wrapper");
+  hamburger_menu = document.querySelector(".hamburger-menu");
+}
+
+const main = document.querySelector("main");
+
+declare();
+
+let dark = false;
+
+function toggleAnimation() {
+  // Clone the wrapper
+  dark = !dark;
+  let clone = big_wrapper.cloneNode(true);
+  if (dark) {
+    clone.classList.remove("light");
+    clone.classList.add("dark");
+  } else {
+    clone.classList.remove("dark");
+    clone.classList.add("light");
+  }
+  clone.classList.add("copy");
+  main.appendChild(clone);
+
+  document.body.classList.add("stop-scrolling");
+
+  clone.addEventListener("animationend", () => {
+    document.body.classList.remove("stop-scrolling");
+    big_wrapper.remove();
+    clone.classList.remove("copy");
+    // Reset Variables
+    declare();
+    events();
+  });
+}
+
+function events() {
+  toggle_btn.addEventListener("click", toggleAnimation);
+  hamburger_menu.addEventListener("click", () => {
+    big_wrapper.classList.toggle("active");
+  });
+}
+
+events();
+        </script>
+      </body>
+
 </div>
 {% include 'footer.html' %}
 {% endblock %}

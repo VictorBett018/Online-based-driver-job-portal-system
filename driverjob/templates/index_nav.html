@@ -8,6 +8,8 @@
        
         {% load static %}
         <link rel="stylesheet" href="{% static 'css/styles.css'%}">
+        <link rel="stylesheet" href="{% static 'css/contact.css'%}">
+
         <title>
             Driver Job Portal
         </title>
@@ -27,8 +29,7 @@
         <ul>
             <li><a style="text-decoration: none;" href="{% url 'index' %}">Home</a></li>
             <li><a style="text-decoration: none;" href="{% url 'all_jobs' %}">Driver Jobs</a></li>
-            <li><a style="text-decoration: none;"  href="{% url 'index' %}">Contact</a></li>
-           <li><a style="text-decoration: none;"  href="{% url 'index' %}">About Us</a></li>
+            <li><a style="text-decoration: none;"  href="{% url 'contact_us' %}">Contact</a></li>
             <li style="float:right;"><a style="text-decoration: none;" href="{% url 'admin_login' %}"> Admin</a></li>
             <li style="float:right; "><a style="text-decoration: none;" href="{% url 'employer_login' %}"> Employer</a></li>
             <li style="float:right;"><a style="text-decoration: none;" href="{% url 'user_login' %}"> Driver</a></li>
